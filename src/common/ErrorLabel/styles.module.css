@@ -1,0 +1,50 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(1); } }
+
+.errorLabelContainer, .errorLabelContainerInline {
+  background: #db2828;
+  color: white;
+  padding: 8px 25px 8px 15px;
+  border-radius: 5px;
+  margin: 20px 0 20px;
+  position: relative; }
+  .errorLabelContainer p, .errorLabelContainerInline p {
+    text-transform: none; }
+  .errorLabelContainer .errorLabelText, .errorLabelContainerInline .errorLabelText {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    display: flex; }
+    .errorLabelContainer .errorLabelText svg, .errorLabelContainerInline .errorLabelText svg {
+      width: 30px;
+      height: 20px;
+      padding-right: 10px; }
+
+.errorLabelContainerInline {
+  position: absolute;
+  right: -10px;
+  bottom: 15px; }
+  .errorLabelContainerInline:after {
+    content: '';
+    background: #db2828;
+    width: 26px;
+    height: 26px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -5px;
+    left: calc(100% - 52px);
+    z-index: 0; }
+  .errorLabelContainerInline svg {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px; }

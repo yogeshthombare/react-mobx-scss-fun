@@ -1,0 +1,52 @@
+@import '../variables.scss';
+
+.errorLabelContainer, .errorLabelContainerInline {
+  background: $error-red;
+  color: white;
+  padding: 8px 25px 8px 15px;
+  border-radius: 5px;
+  margin: 20px 0 20px;
+  position: relative;
+
+  p {
+    text-transform: none;
+  }
+
+  .errorLabelText {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    svg {
+      width: 30px;
+      height: 20px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.errorLabelContainerInline {
+  position: absolute;
+  right: -10px;
+  bottom: 15px;
+
+  &:after {
+    content: '';
+    background: $error-red;
+    width: 26px;
+    height: 26px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: -5px;
+    left: calc(100% - 52px);
+    z-index: 0;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+  }
+}

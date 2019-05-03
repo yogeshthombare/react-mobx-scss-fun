@@ -1,0 +1,101 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(1); } }
+
+.subheader {
+  background: #f1f1f1;
+  width: 100vw;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+  .subheader .subheaderLeft {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; }
+  .subheader .subheaderRight {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+  .subheader .subHeaderLeftIcons {
+    color: #363f50;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    .subheader .subHeaderLeftIcons:hover {
+      opacity: 0.7; }
+  .subheader .subHeaderLeftOutlineIcons {
+    color: transparent;
+    stroke-width: 1;
+    stroke: #363f50;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    .subheader .subHeaderLeftOutlineIcons:hover {
+      opacity: 0.7; }
+  .subheader .subHeaderRightIcons {
+    position: relative;
+    color: #363f50;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    .subheader .subHeaderRightIcons:hover {
+      opacity: 0.7; }
+  .subheader .subHeaderRightOutlineIcons {
+    position: relative;
+    color: transparent;
+    stroke-width: .8;
+    fill-opacity: 0;
+    color: #363f50;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    .subheader .subHeaderRightOutlineIcons:hover {
+      opacity: 0.7; }
+  .subheader .notificationBadge {
+    position: absolute;
+    background: #db2828;
+    width: 10px;
+    height: 10px;
+    top: -2px;
+    right: -2px;
+    text-align: center;
+    border-radius: 50%;
+    color: white; }
+  .subheader .subHeaderLocationSelector {
+    background-color: transparent;
+    border: 1px solid #363f50;
+    color: #363f50;
+    font-size: 14px;
+    margin: 0 0 0 20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 220px;
+    width: auto; }
+    .subheader .subHeaderLocationSelector span {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }

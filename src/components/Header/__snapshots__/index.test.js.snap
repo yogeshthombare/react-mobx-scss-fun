@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component is loaded and renders as expected 1`] = `ShallowWrapper {}`;

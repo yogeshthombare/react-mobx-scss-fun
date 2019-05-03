@@ -1,0 +1,9 @@
+@import '../../common/variables.scss';
+
+.applicationContainer {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  background-color: #fffff2;
+}

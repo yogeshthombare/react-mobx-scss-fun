@@ -1,0 +1,112 @@
+@import '../../common/variables.scss';
+
+.authenticationContainer {
+  flex: 1;
+  background: $blue;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+
+  &::after {
+    content: '';
+    position: fixed;
+    background: url('../../assets/images/logo.svg');
+    opacity: 0.3;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+    right: -36vh;
+    background-position: right;
+    height: 100vh;
+    width: 100vh;
+  }
+
+  .authenticationLogo {
+    background: url('../../assets/images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 25vh;
+    min-height: 200px;
+    max-width: 600px;
+    @include mobileFriendly;
+  }
+
+  .authenticationFormContainer {
+    min-height: 600px;
+    width: 400px;
+    justify-content: center;
+    @include mobileFriendly;
+
+    .authenticationLoadingIcon {
+      color: $blue;
+      position: absolute;
+      right: 10px;
+      @include rotationAnim;
+    }
+
+    header {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+
+      h1, p {
+        margin: 0;
+        width: calc(100% - 20px);
+        text-align: center;
+      }
+    }
+
+    .link {
+      align-self: flex-end;
+      margin-bottom: 30px;
+      height: auto;
+    }
+
+    .authenticationRecoveryContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .authenticationTermsContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 20px);
+      flex-shrink: 0;
+
+      .authenticationTermsCheck {
+        width: 25px;
+        height: 25px;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      p {
+        font-weight: lighter;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .authenticationFooter {
+    height: 200px;
+  }
+}
+
+.privacyStatementContainer {
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    margin: 0;
+  }
+}

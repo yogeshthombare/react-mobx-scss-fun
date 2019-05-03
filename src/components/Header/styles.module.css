@@ -1,0 +1,111 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(1); } }
+
+.headerContainer {
+  background: #207CA7;
+  padding: 0 20px 0;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .headerContainer .headerNav {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out; }
+    .headerContainer .headerNav .headerLogo {
+      background: url("../../assets/images/logo.svg") no-repeat center/contain;
+      width: 220px;
+      height: 60px;
+      margin-right: 30px; }
+    .headerContainer .headerNav a, .headerContainer .headerNav :not(.headerLogo) {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 30px;
+      transition: all 0.3s ease-in-out;
+      align-items: center;
+      display: flex;
+      border-bottom: 4px solid #207CA7;
+      height: auto;
+      padding: 4px 0; }
+      .headerContainer .headerNav a:first-child, .headerContainer .headerNav :not(.headerLogo):first-child {
+        margin: 0 30px 0 0; }
+      .headerContainer .headerNav a:not(:first-child):hover, .headerContainer .headerNav :not(.headerLogo):not(:first-child):hover {
+        opacity: 0.7; }
+    .headerContainer .headerNav .headerActiveTab {
+      border-bottom: 4px solid white; }
+  .headerContainer .headerInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    .headerContainer .headerInfo .sliderMenuLogout {
+      cursor: pointer;
+      color: #db2828; }
+      .headerContainer .headerInfo .sliderMenuLogout:hover {
+        transition: all 0.3s ease-in-out;
+        background: #db2828 !important;
+        color: white; }
+    .headerContainer .headerInfo .sliderMenuVersion {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      align-items: center;
+      padding: 0 20px;
+      cursor: default;
+      pointer-events: none;
+      color: #bababc;
+      background-color: white; }
+  .headerContainer .headerSearchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    margin-right: 50px; }
+    .headerContainer .headerSearchForm label {
+      margin: 0;
+      padding: 0; }
+  .headerContainer .headerProfile {
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    position: relative; }
+  .headerContainer .headerProfileImage {
+    min-width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: white;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .headerContainer .headerProfileImage h2 {
+      color: #363f50;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      font-size: 24px; }
+  .headerContainer .headerProfileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .headerContainer .headerProfileInfo h5, .headerContainer .headerProfileInfo p {
+      margin: 0;
+      padding: 0;
+      color: white; }
+    .headerContainer .headerProfileInfo p {
+      font-weight: lighter;
+      font-size: 12px; }

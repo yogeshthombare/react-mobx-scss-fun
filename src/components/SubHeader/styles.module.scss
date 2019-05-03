@@ -1,0 +1,119 @@
+@import '../../common/variables.scss';
+
+.subheader {
+  background: $gray;
+  width: 100vw;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .subheaderLeft {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .subheaderRight {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .subHeaderLeftIcons {
+    color: $blue-dark;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .subHeaderLeftOutlineIcons {
+    color: transparent;
+    stroke-width: 1;
+    stroke: $blue-dark;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+
+  .subHeaderRightIcons {
+    position: relative;
+    color: $blue-dark;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .subHeaderRightOutlineIcons {
+    position: relative;
+    color: transparent;
+    stroke-width: .8;
+    fill-opacity: 0;
+    color: $blue-dark;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .notificationBadge {
+    position: absolute;
+    background: $error-red;
+    width:10px;
+    height:10px;
+    top:-2px;
+    right:-2px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .subHeaderLocationSelector {
+    background-color: transparent;
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+    font-size: 14px;
+    margin: 0 0 0 20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 220px;
+    width: auto;
+
+    span {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

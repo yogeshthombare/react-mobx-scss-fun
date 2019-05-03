@@ -1,0 +1,51 @@
+// Colors
+$blue: #207CA7;
+$blue-dark: #363f50;
+$blue-darkest: #1a202a;
+$blue-ligher: #e4f6ff;
+$gray: #f1f1f1;
+$gray-darker: #bababc;
+$error-red: #db2828;
+$success-green: #3dcc4a;
+
+// Media Queries
+$mobile: 800px;
+$mobile-and-tablet: 1024px;
+
+// Mixins
+
+@mixin mobileFriendly {
+  @media screen and (max-width: $mobile) {
+    width: calc(100vw - 30px);
+  }
+}
+
+@mixin mobileAndTabletFriendly {
+  @media screen and (max-width: $mobile-and-tablet) {
+    width: calc(100vw - 30px);
+  }
+}
+
+// Animations
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@mixin rotationAnim {
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

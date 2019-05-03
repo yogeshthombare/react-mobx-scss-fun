@@ -1,0 +1,36 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes scaleAnim {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(1); } }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.loadingContainer {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  display: flex;
+  height: 100%; }
+  .loadingContainer.loadingContainerTransparent {
+    background: none; }
+  .loadingContainer svg {
+    color: #207CA7;
+    width: 25px;
+    height: 25px;
+    animation-name: rotate;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
