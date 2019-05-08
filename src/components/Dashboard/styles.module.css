@@ -22,7 +22,8 @@
   grid-column: 1/4;
   height: 200px;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border: 1px solid #e4f6ff; }
 
 .dashboardTasksContainer {
   display: flex;

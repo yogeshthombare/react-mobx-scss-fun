@@ -1,0 +1,35 @@
+@import '../../common/variables.scss';
+
+.dashboardContainer {
+  display: flex;
+  grid-row: 1/2;
+  grid-column: 1/4;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: all 0.1s ease-in-out;
+}
+
+.dashboardCard {
+  box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin: 0 0 30px;
+  flex: 1;
+  overflow: hidden;
+
+  &:nth-of-type(2) {
+    margin: 0 30px 30px 30px; 
+  }
+}
+
+.dashboardShow {
+  height: 120px;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.dashboardHide {
+  height: 0px;
+  opacity: 0;
+  margin: 0 0 0 0;
+  transform: translate3d(0, 0, 200px);
+}

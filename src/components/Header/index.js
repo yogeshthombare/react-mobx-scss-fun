@@ -13,19 +13,19 @@ const Header = inject('app')(observer(class Header extends Component {
   constructor(props) {
     super(props)
 
-    const {app: {auth, taskStore, teamStore, utilityStore}} = this.props
+    // const {app: {auth, taskStore, teamStore, utilityStore}} = this.props
 
     extendObservable(this, {
-      auth: auth,
-      taskStore: taskStore,
-      teamStore: teamStore,
-      utilityStore: utilityStore,
-      search: {
-        name: '',
-        valid: true
-      },
-      redirect: false,
-      showSliderMenu: false
+      // auth: auth,
+      // taskStore: taskStore,
+      // teamStore: teamStore,
+      // utilityStore: utilityStore,
+      // search: {
+      //   name: '',
+      //   valid: true
+      // },
+      // redirect: false,
+      // showSliderMenu: false
     })
   }
 
@@ -79,68 +79,19 @@ const Header = inject('app')(observer(class Header extends Component {
   }
 
   render() {
-    const version = this.auth.user.release ? `Version ${this.auth.user.release.version}` : ''
-    const {teams, activeTeam} = this.teamStore
-
-    const headerProfileMenuItems = [
-      {
-        name: <a href="https://www.curoglobal.com">Account</a>,
-      }, {
-        name: <a href="https://curosoftware.zendesk.com/hc/en-us/requests/new">Help</a>
-      }, {
-        name: 'Release Notes',
-        action: this.utilityStore.toggleReleaseNotes,
-        autoClose: true,
-      }, {
-        name: 'Privacy Policy',
-        action: this.utilityStore.togglePrivacyPolicy,
-        autoClose: true,
-      }, {
-        name: 'Terms of Service',
-        action: this.utilityStore.toggleTermsOfService,
-        autoClose: true,
-      }, {
-        name: <NavLink to={'/dashboard'} className={styles.sliderMenuLogout}>Logout</NavLink>,
-        action: 'logout'
-      }, {
-        name: <div className={styles.sliderMenuVersion}>{version}</div>,
-      }
-    ]
-
-    if (teams && teams.length > 1) {
-      const switchCompany = {
-        name: 'Switch company',
-        items: teams.map(team => ({...team, active: team.name === activeTeam.name}))
-      }
-      headerProfileMenuItems.splice(1, 0, switchCompany)
-    }
-
     return (
       <header className={styles.headerContainer}>
         <div className={styles.headerNav}>
           <div className={styles.headerLogo} />
-          <NavLink to={'/dashboard'} activeClassName={styles.headerActiveTab}>Dashboard</NavLink>
-          <NavLink to={'/tasks'} activeClassName={styles.headerActiveTab}>Tasks</NavLink>
+          {/* <NavLink to={'/dashboard'} activeClassName={styles.headerActiveTab}>Dashboard</NavLink>
+          <NavLink to={'/tasks'} activeClassName={styles.headerActiveTab}>Tasks</NavLink> */}
         </div>
         <div className={styles.headerInfo}>
           <form className={styles.headerSearchForm}>
-            {/* <AutoCompleteInput suggestions={this.taskStore.fullTaskList} icon={<FaSearch/>} placeholder={'Title, checklist, description, id...'}/> */}
           </form>
           <div className={styles.headerProfile}>
-            {/* <LocationMenu
-              top={100}
-              right={true}
-              heightAuto={true}
-              fullHover={true}
-              autoClose={true}
-              trigger={this.sliderSelector()}
-              items={headerProfileMenuItems}
-              callback={this.handleSelection}
-              childrenKey={'items'} /> */}
           </div>
         </div>
-        {/* <LegalTerms /> */}
-        { this.redirect && <Redirect to={this.redirect} /> }
       </header>
     )
   }

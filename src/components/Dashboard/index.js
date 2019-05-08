@@ -1,62 +1,64 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { extendObservable } from 'mobx'
-// import TaskContainer from '../TaskContainer'
-import LoadingContainer from '../../common/LoadingContainer'
-// import MapPanel from '../MapPanel'
-// import NotificationsFeed from '../NotificationsFeed'
-// import ActivityFeed from '../ActivityFeed'
-// import StatsCards from '../StatsCards'
-// import { FaEmptySet }LocationMenuLocationMenu from 'react-icons/fa'
-// import { FaEmptySet } from 'react-icons/fa';
-
+import Cards from '../Cards'
 import styles from './styles.module.css'
 
 const Dashboard = inject('app')(observer(class Dashboard extends Component {
   constructor(props) {
     super(props)
 
-    const {app: {auth, taskStore, mapStore, reportStore, dashboardStore}} = this.props
-    const {app} = this.props
 
     extendObservable(this, {
-      app: app,
-      auth: auth,
-      taskStore: taskStore,
-      mapStore: mapStore,
-      reportStore: reportStore,
-      dashboardStore: dashboardStore
+      // app: app,
+      // auth: auth,
+      // taskStore: taskStore,
+      // mapStore: mapStore,
+      // reportStore: reportStore,
+      // dashboardStore: dashboardStore
     })
   }
 
   componentWillMount() {
-    this.app.updateCurrentPage('dashboard')
-    this.mapStore.updateCurrentMap(null, true)
+    // this.app.updateCurrentPage('dashboard')
+    // this.mapStore.updateCurrentMap(null, true)
   }
 
   componentDidMount() {
-    this.dashboardStore.fetchTasks()
-    this.reportStore.fetchCurrentStats()
+    // this.dashboardStore.fetchTasks()
+    // this.reportStore.fetchCurrentStats()
   }
 
   getLayout = () => {
-    const {globalMapAvailable, floorplanAvailable} = this.mapStore
-
-    return (floorplanAvailable || globalMapAvailable) && !!this.dashboardStore.currentlyActiveTask
-      ? 'test'
-      : <div className={styles.dashboardMapZeroState}>No available maps to display!</div>
+    // const {globalMapAvailable, floorplanAvailable} = this.mapStore
+    return (
+      <div className={styles.dashboardMapZeroState}>No available maps to display!</div>)
   }
 
   render() {
-    const mapLoading = this.dashboardStore.loading || this.mapStore.loading
+    // const mapLoading = this.dashboardStore.loading || this.mapStore.loading
     return (
       <section className={styles.dashboardContainer}>
-        {/* <StatsCards/> */}
+          <Cards/>
         <div className={styles.dashboardTasksContainer}>
-          {/* <TaskContainer currentlyActiveList={'dashboard'}/> */}
+          <div className={styles.dashboardStats}>
+            <p>I am just checking if it has the right content inside the box</p>
+          </div>
+          <div className={styles.dashboardStats}>
+            <h3>Contents are confirmed within the box</h3>
+          </div>
+          <div className={styles.dashboardStats}>
+            <h2>Tested and working fine.</h2>
+          </div>
+          <div className={styles.dashboardStats}>
+            <h4>This is to check if the scroll y is working fine.</h4>
+          </div>
+          <div className={styles.dashboardStats}>
+            <h1>Yay it's working</h1>
+          </div>
         </div>
         <div className={styles.dashboardMapContainer}>
-          {mapLoading ? <LoadingContainer/> : this.getLayout()}
+          { this.getLayout() }
         </div>
         {/* <NotificationsFeed/>
         <ActivityFeed/> */}

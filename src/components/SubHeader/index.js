@@ -2,53 +2,53 @@ import React, {Component, Fragment} from 'react'
 import { inject, observer } from 'mobx-react'
 import { extendObservable } from 'mobx'
 import { MdNotifications, MdMessage, MdAssessment } from 'react-icons/md'
-import { TiFilter } from 'react-icons/ti'
-import PushMenu from '../../common/PushMenu'
-import SettingsMenu from '../../common/SettingsMenu';
-import LocationMenu from '../../common/LocationMenu'
+// import { TiFilter } from 'react-icons/ti'
+// import PushMenu from '../../common/PushMenu'
+// import SettingsMenu from '../../common/SettingsMenu';
+// import LocationMenu from '../../common/LocationMenu'
 import styles from './styles.module.css'
 
 
 const SubHeader = inject('app')(observer(class SubHeader extends Component {
   constructor(props) {
     super(props)
-    const {app: {taskStore, filterStore, notificationStore, projectStore, activityFeedStore, reportStore}} = this.props
+    // const {app: {taskStore, filterStore, notificationStore, projectStore, activityFeedStore, reportStore}} = this.props
 
     extendObservable(this, {
-      taskStore: taskStore,
-      filterStore: filterStore,
-      notificationStore: notificationStore,
-      projectStore: projectStore,
-      activityFeedStore: activityFeedStore,
-      currentUser: props.app.auth.user,
-      userTeamSettings: props.app.auth.user.team.settings,
-      reportStore: reportStore,
-      dueDate: ' '
+      // taskStore: taskStore,
+      // filterStore: filterStore,
+      // notificationStore: notificationStore,
+      // projectStore: projectStore,
+      // activityFeedStore: activityFeedStore,
+      // currentUser: props.app.auth.user,
+      // userTeamSettings: props.app.auth.user.team.settings,
+      // reportStore: reportStore,
+      // dueDate: ' '
     })
   }
 
   componentDidMount() {
-    this.filterStore.initialize(this.currentUser.team_user_id, this.userTeamSettings)
-    this.notificationStore.fetchProjectNotifications()
+    // this.filterStore.initialize(this.currentUser.team_user_id, this.userTeamSettings)
+    // this.notificationStore.fetchProjectNotifications()
   }
 
   handleFilterClean = (item, removeAll) => {
-    this.taskStore.removeGlobalFilter(item, removeAll)
-    if (removeAll) {
-      this.filterStore.initialize(this.currentUser.team_user_id, this.userTeamSettings)
-    }
+    // this.taskStore.removeGlobalFilter(item, removeAll)
+    // if (removeAll) {
+    //   this.filterStore.initialize(this.currentUser.team_user_id, this.userTeamSettings)
+    // }
   }
 
   toggleNotificationFeed = () => {
-    this.notificationStore.toggleNotificationFeed()
+    // this.notificationStore.toggleNotificationFeed()
   }
 
   toggleActivityFeed = () => {
-    this.activityFeedStore.toggleActivityFeed()
+    // this.activityFeedStore.toggleActivityFeed()
   }
 
   toggleStatsCards = () => {
-    this.reportStore.toggleStatsCards()
+    // this.reportStore.toggleStatsCards()
   }
 
   handleSelection = (selection) => {
@@ -86,26 +86,26 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
   }
 
   render() {
-    const { currentlyActivePage } = this.props.app 
-    const isTaskPage = currentlyActivePage === 'taskboard'
-    const isUserManagementPage = currentlyActivePage === 'usermanagement'
-    const notificationsVisible = this.notificationStore.showFeed
-    const activityFeedVisible = this.activityFeedStore.showFeed 
-    const statsCardsVisible = this.reportStore.showStats
-    const filterCount = this.taskStore.currentFilteredTasks
-      ? this.taskStore.currentFilteredTasks.length
-      : 0
+    // const { currentlyActivePage } = this.props.app 
+    // const isTaskPage = currentlyActivePage === 'taskboard'
+    // const isUserManagementPage = currentlyActivePage === 'usermanagement'
+    // const notificationsVisible = this.notificationStore.showFeed
+    // const activityFeedVisible = this.activityFeedStore.showFeed 
+    // const statsCardsVisible = this.reportStore.showStats
+    // const filterCount = this.taskStore.currentFilteredTasks
+    //   ? this.taskStore.currentFilteredTasks.length
+    //   : 0
 
-    const appliedFilters =
-      this.taskStore.selectedGlobalFilters && this.taskStore.selectedGlobalFilters.length > 0
-        ? this.taskStore.selectedGlobalFilters.length
-        : false
-    const isLoading = this.projectStore.loading || this.taskStore.loading
+    // const appliedFilters =
+    //   this.taskStore.selectedGlobalFilters && this.taskStore.selectedGlobalFilters.length > 0
+    //     ? this.taskStore.selectedGlobalFilters.length
+    //     : false
+    // const isLoading = this.projectStore.loading || this.taskStore.loading
 
     return (
       <div className={styles.subheader}>
         <div className={styles.subheaderLeft}>
-          {!isUserManagementPage &&
+          {/* {!isUserManagementPage &&
           <PushMenu
             key='filterMenu'
             loading={this.filterStore.loading}
@@ -116,9 +116,9 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
             onSelection={this.handleSelection}
             onClearFilter={this.handleFilterClean}
             onOptionSelected={this.handleOptionSelection}/>
-          }
+          } */}
 
-          { isTaskPage &&
+          {/* { isTaskPage &&
             <LocationMenu
               top={160}
               trigger={this.locationSelector()}
@@ -127,11 +127,11 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
               callback={this.selectLocationItem}
               children={this.projectStore.activeProject.floorplans}
               childrenKey={'floorplans'} />
-          }
+          } */}
 
         </div>
         <div className={styles.subheaderRight}>
-          {!isUserManagementPage &&
+          {/* {!isUserManagementPage &&
             <Fragment>
               { !isTaskPage && <MdAssessment className={statsCardsVisible ? styles.subHeaderRightIcons : styles.subHeaderRightOutlineIcons} onClick={this.toggleStatsCards}/> }
               <div className={styles.subHeaderRightIcons}>
@@ -143,9 +143,9 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
                   }
               </div>
               <MdMessage className={activityFeedVisible ? styles.subHeaderRightIcons : styles.subHeaderRightOutlineIcons} onClick={this.toggleActivityFeed}/>
-            </Fragment>
+            </Fragment> }
           }
-          <SettingsMenu isTaskPage={isTaskPage}/>
+          { <SettingsMenu isTaskPage={isTaskPage}/> */}
         </div>
       </div>
     )

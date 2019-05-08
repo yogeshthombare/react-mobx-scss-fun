@@ -2,22 +2,10 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import { extendObservable } from 'mobx'
 import { Route } from 'react-router-dom'
-// import Header from '../Header'
-// import SubHeader from '../SubHeader'
+import Header from '../Header'
+import SubHeader from '../SubHeader'
 import Dashboard from '../Dashboard'
-// import TaskBoard from '../TaskBoard'
-// import TaskCreationPanel from '../TaskCreationPanel'
-// import UserManagement from '../UserManagement'
-// import Assets from '../CompanySettings/Assets'
-// import Cheklists from '../CompanySettings/Checklists'
-// import LocationType from '../CompanySettings/LocationType'
-// import Milestones from '../CompanySettings/Milestones'
-// import CompanySettings from '../CompanySettings/Settings'
-// import TaskType from '../CompanySettings/TaskType'
-// import Businesses from '../Relationships/Businesses'
-// import People from '../Relationships/People'
-// import ServiceAddresses from '../Relationships/ServiceAddresses'
-// import ManageFloorPlan from '../ManageFloorPlan'
+
 import styles from './styles.module.css'
 
 const Main = inject('app')(observer(class Main extends Component {
@@ -34,8 +22,8 @@ const Main = inject('app')(observer(class Main extends Component {
   render() {
     return (
       <div className={styles.mainContainer}>
-        {/* <Header/>
-        <SubHeader/> */}
+        <Header/>
+        <SubHeader/>
         <Route exact path='/dashboard' component={Dashboard}/>
         {/* <Route exact path='/dashboard/create-task' component={TaskCreationPanel}/>
         <Route exact path='/tasks' component={TaskBoard}/>

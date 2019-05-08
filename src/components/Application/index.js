@@ -5,7 +5,8 @@ import { inject, observer } from 'mobx-react'
 // import { extendObservable } from 'mobx'
 import styles from './styles.module.css'
 import ZeroState from '../ZeroState'
-
+import Main from '../Main'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 
 const Application = inject('app')(observer(class Application extends Component {
   constructor(props) {
@@ -15,22 +16,18 @@ const Application = inject('app')(observer(class Application extends Component {
   render() {
     return (
       <div className={styles.applicationContainer}>
-        <ZeroState/>
-        <header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" />
-         <p>
-           Edit <code>src/App.js</code> and save to reload.
-         </p>
-         <p>I am just checking whether it makes any change or not</p>
-         <a
-           className="App-link"
-           href="https://reactjs.org"
-           target="_blank"
-           rel="noopener noreferrer"
-         >
-           Learn React
-         </a>
-       </header>
+        <Router>
+          {/* <Route path='/privacy-policy' component={this.getLegalNotesPrivacy}/>
+          <Route path='/terms-of-service' component={this.getLegalNotesTerms}/> */}
+          {/* {layout} */}
+          {/* <ZeroState/> */}
+          <Main/>
+          <Route exact path='/' render={() => (
+            // this.auth.authenticated
+              <Redirect to='/dashboard'/>
+              // <Redirect to='/' />
+          )}/>
+        </Router>
       </div>
     )
   }
