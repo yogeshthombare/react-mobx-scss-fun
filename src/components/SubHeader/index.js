@@ -40,11 +40,11 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
   }
 
   toggleNotificationFeed = () => {
-    // this.notificationStore.toggleNotificationFeed()
+    this.notificationStore.toggleNotificationFeed()
   }
 
   toggleActivityFeed = () => {
-    // this.activityFeedStore.toggleActivityFeed()
+    this.activityFeedStore.toggleActivityFeed()
   }
 
   toggleStatsCards = () => {
@@ -128,24 +128,26 @@ const SubHeader = inject('app')(observer(class SubHeader extends Component {
               children={this.projectStore.activeProject.floorplans}
               childrenKey={'floorplans'} />
           } */}
-
+        {/*  styles.subHeaderRightOutlineIcons */}
+        {/*  styles.subHeaderRightOutlineIcons */}
+        {/*  styles.subHeaderRightOutlineIcons */}
         </div>
         <div className={styles.subheaderRight}>
-          {/* {!isUserManagementPage &&
+          {
             <Fragment>
-              { !isTaskPage && <MdAssessment className={statsCardsVisible ? styles.subHeaderRightIcons : styles.subHeaderRightOutlineIcons} onClick={this.toggleStatsCards}/> }
+              { <MdAssessment className={styles.subHeaderRightIcons} onClick={this.toggleStatsCards}/> }
               <div className={styles.subHeaderRightIcons}>
-                <MdNotifications className={notificationsVisible ? styles.subHeaderRightIcons: styles.subHeaderRightOutlineIcons} onClick={this.toggleNotificationFeed}/>
-                  {
+                <MdNotifications className={styles.subHeaderRightIcons} onClick={this.toggleNotificationFeed}/>
+                  {/* {
                     this.notificationStore.projectsNotifications
                     && this.notificationStore.projectsNotifications.length > 0
                     && <span className={styles.notificationBadge} />
-                  }
+                  } */}
               </div>
-              <MdMessage className={activityFeedVisible ? styles.subHeaderRightIcons : styles.subHeaderRightOutlineIcons} onClick={this.toggleActivityFeed}/>
+              <MdMessage className={styles.subHeaderRightIcons} onClick={this.toggleActivityFeed}/>
             </Fragment> }
           }
-          { <SettingsMenu isTaskPage={isTaskPage}/> */}
+          {/* { <SettingsMenu isTaskPage={isTaskPage}/> */}
         </div>
       </div>
     )

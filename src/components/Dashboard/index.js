@@ -3,6 +3,8 @@ import { inject, observer } from 'mobx-react'
 import { extendObservable } from 'mobx'
 import Cards from '../Cards'
 import styles from './styles.module.css'
+import Notifications from '../Notifications'
+import Activity from '../Activity'
 
 const Dashboard = inject('app')(observer(class Dashboard extends Component {
   constructor(props) {
@@ -58,10 +60,10 @@ const Dashboard = inject('app')(observer(class Dashboard extends Component {
           </div>
         </div>
         <div className={styles.dashboardMapContainer}>
-          { this.getLayout() }
+          <div className={styles.dashboardMapZeroState}>No available maps to display!</div>)
         </div>
-        {/* <NotificationsFeed/>
-        <ActivityFeed/> */}
+        <Notifications/>
+        <Activity/>
       </section>
     )
   }
