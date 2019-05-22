@@ -1,6 +1,6 @@
 import { types, getSnapshot, applySnapshot } from 'mobx-state-tree'
 import { AuthenticationStore } from '../AuthenticationStore'
-
+import { NotificationStore } from '../NotificationStore'
 
 let initialState = {}
 
@@ -30,11 +30,10 @@ export const ApplicationStore = types
     //   filterMenuItems: [],
     //   dueDate: undefined
     // }),
-    // notificationStore: types.optional(NotificationStore, {
-    //   notificationsFeed: [],
-    //   showFeed: false,
-    //   allNotifications: false,
-    // }),
+    notificationStore: types.optional(NotificationStore, {
+      showFeed: false,
+      showCards: true,
+    }),
     // activityFeedStore: types.optional(ActivityFeedStore, {
     //   showFeed: true,
     // }),
